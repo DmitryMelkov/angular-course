@@ -1,8 +1,14 @@
 <div class="post">
   <h2>Post title</h2>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto velit similique hic nostrum veniam repellendus unde
-    itaque id distinctio beatae dolores ullam quisquam rerum, quis voluptate, obcaecati maiores doloremque sit!</p>
   <p>
-
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto velit similique hic nostrum veniam repellendus unde
+    itaque id distinctio beatae dolores ullam quisquam rerum, quis voluptate, obcaecati maiores doloremque sit!
   </p>
+
+  <input type="text" [value]="title" (input)="onInput($event)">
+  <p>{{title}}</p>
+
+  <input type="text" [(ngModel)]="title1">
+  <p>{{title1}}</p>
+
 </div>

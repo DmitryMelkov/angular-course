@@ -1,1 +1,43 @@
-<p>post2 works!</p>
+<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+
+<div [ngStyle]="{
+  width: '200px',
+  height: '200px',
+  borderRadius: '5px',
+  border: '1px solid grey',
+  background: backgroundToggle ? 'red' : 'blue'
+}">
+</div>
+
+<p [ngClass]="{
+  red: backgroundToggle,
+  blue: !backgroundToggle
+}">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, suscipit?
+</p>
+
+<p [class.blue]="!backgroundToggle" [class.red]="backgroundToggle">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis quisquam non iure quasi nulla, sit fuga voluptatum
+  incidunt impedit officiis commodi, aut ipsa ex sunt. Voluptate vero totam recusandae ipsa.
+</p>
+
+<button (click)="toggle = !toggle">Toggle</button>
+<p *ngIf="toggle; else blueP " class="red">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, a?
+</p>
+
+<ng-template #blueP>
+  <p class="blue">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores beatae aspernatur adipisci excepturi
+    architecto facilis!
+  </p>
+</ng-template>
+
+
+<div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, dolorum? switch</p>
+  <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit amet. switch</p>
+  <p *ngSwitchDefaul>Lorem ipsum dolor sit amet.</p>
+
+
+</div>
