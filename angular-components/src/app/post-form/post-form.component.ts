@@ -16,6 +16,7 @@ import { Post } from '../app.component';
 export class PostFormComponent implements OnInit {
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
 
+  //передача фокуса в инпут
   @ViewChild('titleInput') inputRef!: ElementRef;
 
   title = '';
@@ -38,6 +39,7 @@ export class PostFormComponent implements OnInit {
     }
   }
 
+  
   focusTitle() {
     this.inputRef.nativeElement.focus();
   }
